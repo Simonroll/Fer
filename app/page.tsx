@@ -1,0 +1,58 @@
+export default function Home() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-stone-800 to-stone-950 px-4">
+      {/* Thẻ Form phong cách Vintage / Art Deco */}
+      <div className="w-full max-w-md bg-[#f4f1ea] border-2 border-[#d4af37] rounded-sm shadow-2xl p-8 relative overflow-hidden">
+        
+        {/* Viền trang trí góc */}
+        <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#d4af37]"></div>
+        <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-[#d4af37]"></div>
+        <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-[#d4af37]"></div>
+        <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#d4af37]"></div>
+
+        <h2 className="text-3xl font-serif text-[#3e3a35] tracking-widest uppercase border-b border-[#d4af37] pb-4 mb-8 text-center">
+          Login
+        </h2>
+        
+        <form className="space-y-6 relative z-10">
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-serif text-[#5c5446] tracking-wider mb-2 uppercase"
+            >
+              Email or Username
+            </label>
+            <input
+              type="text"
+              id="email"
+              placeholder="Enter your credentials"
+              className="w-full px-4 py-2 bg-[#fffdf7] border border-[#bfa87e] text-[#3e3a35] focus:border-[#8b7355] focus:ring-1 focus:ring-[#8b7355] outline-none rounded-none placeholder-stone-400 font-serif shadow-inner"
+            />
+          </div>
+          
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-serif text-[#5c5446] tracking-wider mb-2 uppercase"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your passcode"
+              className="w-full px-4 py-2 bg-[#fffdf7] border border-[#bfa87e] text-[#3e3a35] focus:border-[#8b7355] focus:ring-1 focus:ring-[#8b7355] outline-none rounded-none placeholder-stone-400 font-serif shadow-inner"
+            />
+          </div>
+          
+          <button
+            type="button"
+            className="w-full mt-4 bg-[#2a2622] text-[#d4af37] font-serif uppercase tracking-widest border border-[#d4af37] hover:bg-[#d4af37] hover:text-[#2a2622] transition-colors duration-500 py-3 px-4 rounded-none shadow-md"
+          >
+            Authenticate
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}

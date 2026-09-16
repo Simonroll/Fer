@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[url('/suitcase.webp')] bg-cover bg-center px-4 relative">
+    <div className="flex min-h-screen items-center justify-center bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center px-4 relative">
       {/* Đã gỡ bỏ hoàn toàn lớp làm mờ (blur) và lớp mây đen theo yêu cầu */}
       
       {/* Thẻ Form phong cách Vintage nhưng font chữ hiện đại dễ đọc */}

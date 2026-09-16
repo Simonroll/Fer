@@ -1,9 +1,8 @@
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-[url('/suitcase.jpg')] bg-cover bg-center px-4 relative">
-      {/* Lớp mờ (overlay) để làm dịu background, giúp form nổi bật */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
-
+      {/* Đã gỡ bỏ hoàn toàn lớp làm mờ (blur) và lớp mây đen theo yêu cầu */}
+      
       {/* Thẻ Form phong cách Vintage nhưng font chữ hiện đại dễ đọc */}
       <div className="w-full max-w-md bg-[#f4f1ea]/95 border-2 border-[#d4af37] rounded-sm shadow-2xl p-8 relative z-10 overflow-hidden font-sans">
         

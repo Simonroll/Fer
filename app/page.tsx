@@ -1,8 +1,11 @@
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-stone-800 to-stone-950 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-[url('/suitcase.jpg')] bg-cover bg-center px-4 relative">
+      {/* Lớp mờ (overlay) để làm dịu background, giúp form nổi bật */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+
       {/* Thẻ Form phong cách Vintage / Art Deco */}
-      <div className="w-full max-w-md bg-[#f4f1ea] border-2 border-[#d4af37] rounded-sm shadow-2xl p-8 relative overflow-hidden">
+      <div className="w-full max-w-md bg-[#f4f1ea]/95 border-2 border-[#d4af37] rounded-sm shadow-2xl p-8 relative z-10 overflow-hidden">
         
         {/* Viền trang trí góc */}
         <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#d4af37]"></div>
@@ -10,7 +13,7 @@ export default function Home() {
         <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-[#d4af37]"></div>
         <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#d4af37]"></div>
 
-        <h2 className="text-3xl font-serif text-[#3e3a35] tracking-widest uppercase border-b border-[#d4af37] pb-4 mb-8 text-center">
+        <h2 className="text-3xl font-serif text-[#3e3a35] tracking-widest uppercase border-b border-[#d4af37] pb-4 mb-8 text-center drop-shadow-sm">
           Login
         </h2>
         
@@ -18,7 +21,7 @@ export default function Home() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-serif text-[#5c5446] tracking-wider mb-2 uppercase"
+              className="block text-sm font-serif text-[#5c5446] tracking-wider mb-2 uppercase font-semibold"
             >
               Email or Username
             </label>
@@ -33,7 +36,7 @@ export default function Home() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-serif text-[#5c5446] tracking-wider mb-2 uppercase"
+              className="block text-sm font-serif text-[#5c5446] tracking-wider mb-2 uppercase font-semibold"
             >
               Password
             </label>

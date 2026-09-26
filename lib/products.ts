@@ -18,14 +18,14 @@ export const products = [
     name: "Gaming Mouse",
     description: "Ergonomic gaming mouse with adjustable DPI.",
     price: 59.99,
-    image: "https://images.unsplash.com/photo-1527814050087-379381547969?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop"
   },
   {
     id: 4,
     name: "4K Monitor",
     description: "Ultra HD 4K monitor for crisp visuals.",
     price: 349.99,
-    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d4aff?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=600&auto=format&fit=crop"
   },
   {
     id: 5,

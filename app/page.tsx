@@ -26,7 +26,6 @@ export default function Home() {
 
       {/* Main Content - Product List */}
       <main className="flex-grow container mx-auto px-4 py-8 max-w-7xl relative z-10">
-        <h2 className="text-3xl font-bold text-white mb-8 drop-shadow-md">Featured Products</h2>
         <div 
           data-testid="product-list" 
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"

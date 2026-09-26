@@ -39,8 +39,11 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
-      <Card className="w-full max-w-md">
+    <div className="flex min-h-screen items-center justify-center bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center bg-fixed px-4 relative">
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
+
+      <Card className="w-full max-w-md relative z-10 bg-white/95 border-[#d4af37] border-2 shadow-2xl rounded-sm">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">Login</CardTitle>
           <CardDescription className="text-center">Enter your credentials to access your account.</CardDescription>
@@ -93,8 +96,8 @@ export default function LoginPage() {
               )}
             </div>
 
-            <Button type="submit" data-testid="login-submit" className="w-full">
-              Sign In
+            <Button type="submit" data-testid="login-submit" className="w-full bg-[#2a2622] text-[#d4af37] font-bold uppercase tracking-widest border border-[#d4af37] hover:bg-[#d4af37] hover:text-[#2a2622] transition-colors duration-500 rounded-none shadow-md">
+              Authenticate
             </Button>
           </form>
         </CardContent>

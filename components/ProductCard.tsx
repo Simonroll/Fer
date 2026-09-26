@@ -13,8 +13,8 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <Card data-testid="product-card" className="overflow-hidden flex flex-col h-full">
-      <div className="relative w-full aspect-square bg-gray-100">
+    <Card data-testid="product-card" className="overflow-hidden flex flex-col h-full bg-white/95 border-[#d4af37] border-2 shadow-xl rounded-sm">
+      <div className="relative w-full aspect-square bg-gray-100 border-b-2 border-[#d4af37]">
         <Image
           data-testid="product-image"
           src={product.image}

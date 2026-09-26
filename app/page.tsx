@@ -1,60 +1,44 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { products } from "@/lib/products";
+import { ProductCard } from "@/components/ProductCard";
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center px-4 relative">
-      {/* Đã gỡ bỏ hoàn toàn lớp làm mờ (blur) và lớp mây đen theo yêu cầu */}
-      
-      {/* Thẻ Form phong cách Vintage nhưng font chữ hiện đại dễ đọc */}
-      <div className="w-full max-w-md bg-[#f4f1ea]/95 border-2 border-[#d4af37] rounded-sm shadow-2xl p-8 relative z-10 overflow-hidden font-sans">
-        
-        {/* Viền trang trí góc */}
-        <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-[#d4af37]"></div>
-        <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-[#d4af37]"></div>
-        <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-[#d4af37]"></div>
-        <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-[#d4af37]"></div>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* Header */}
+      <header className="bg-white border-b shadow-sm sticky top-0 z-10">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
+          <h1 className="text-xl font-bold text-gray-900">MyStore</h1>
+          <nav className="space-x-4">
+            <Button asChild variant="outline">
+              <Link href="/login" data-testid="btn-login">Login</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/register" data-testid="btn-register">Register</Link>
+            </Button>
+          </nav>
+        </div>
+      </header>
 
-        <h2 className="text-3xl font-bold text-[#3e3a35] tracking-wide uppercase border-b border-[#d4af37] pb-4 mb-8 text-center drop-shadow-sm">
-          Login
-        </h2>
-        
-        <form className="space-y-6 relative z-10">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm text-[#5c5446] tracking-wide mb-2 uppercase font-bold"
-            >
-              Email or Username
-            </label>
-            <input
-              type="text"
-              id="email"
-              placeholder="Enter your credentials"
-              className="w-full px-4 py-3 bg-[#fffdf7] border border-[#bfa87e] text-[#3e3a35] focus:border-[#8b7355] focus:ring-1 focus:ring-[#8b7355] outline-none rounded-none placeholder-stone-400 shadow-inner text-base"
-            />
-          </div>
-          
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm text-[#5c5446] tracking-wide mb-2 uppercase font-bold"
-            >
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Enter your passcode"
-              className="w-full px-4 py-3 bg-[#fffdf7] border border-[#bfa87e] text-[#3e3a35] focus:border-[#8b7355] focus:ring-1 focus:ring-[#8b7355] outline-none rounded-none placeholder-stone-400 shadow-inner text-base"
-            />
-          </div>
-          
-          <button
-            type="button"
-            className="w-full mt-4 bg-[#2a2622] text-[#d4af37] font-bold uppercase tracking-widest border border-[#d4af37] hover:bg-[#d4af37] hover:text-[#2a2622] transition-colors duration-500 py-3 px-4 rounded-none shadow-md text-base"
-          >
-            Authenticate
-          </button>
-        </form>
-      </div>
+      {/* Main Content - Product List */}
+      <main className="flex-grow container mx-auto px-4 py-8 max-w-7xl">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Featured Products</h2>
+        <div 
+          data-testid="product-list" 
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6"
+        >
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </main>
+
+      <footer className="bg-white border-t mt-auto py-6">
+        <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
+          &copy; {new Date().getFullYear()} MyStore. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 }

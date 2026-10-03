@@ -6,18 +6,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+import { useAuth } from "@/contexts/AuthContext";
+
 export default function RegisterPage() {
+  const { signUp } = useAuth();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   
   const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string; confirmPassword?: string }>({});
+  const [errorAuth, setErrorAuth] = useState("");
   const [success, setSuccess] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSuccess("");
+    setErrorAuth("");
     const newErrors: { name?: string; email?: string; password?: string; confirmPassword?: string } = {};
 
     // Validate Name
@@ -48,9 +54,28 @@ export default function RegisterPage() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      return;
+    }
+    
+    setErrors({});
+    setIsSubmitting(true);
+    
+    const { error } = await signUp({
+      email,
+      password,
+      options: {
+        data: {
+          full_name: name,
+        }
+      }
+    });
+
+    setIsSubmitting(false);
+
+    if (error) {
+      setErrorAuth(error.message);
     } else {
-      setErrors({});
-      setSuccess("Registration successful (demo)");
+      setSuccess("Registration successful");
     }
   };
 
@@ -66,6 +91,11 @@ export default function RegisterPage() {
         </CardHeader>
         <CardContent>
           <form data-testid="register-form" onSubmit={handleSubmit} noValidate className="space-y-4">
+            {errorAuth && (
+              <div data-testid="error-auth" className="p-3 bg-red-100 text-red-700 rounded-md text-sm font-medium">
+                {errorAuth}
+              </div>
+            )}
             {success && (
               <div data-testid="form-success" className="p-3 bg-green-100 text-green-700 rounded-md text-sm">
                 {success}

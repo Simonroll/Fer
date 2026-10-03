@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { products } from "@/lib/products";
 import { ProductCard } from "@/components/ProductCard";
+import { useAuth } from "@/contexts/AuthContext";
 
 export default function Home() {
+  const { user, signOut } = useAuth();
+
   return (
     <div className="min-h-screen flex flex-col bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center bg-fixed relative">
       {/* Overlay to make content more readable */}
@@ -13,13 +18,30 @@ export default function Home() {
       <header className="bg-white/95 border-b-2 border-[#d4af37] shadow-sm sticky top-0 z-10 relative">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
           <h1 className="text-xl font-bold text-[#bfa87e] uppercase tracking-wider">1999 Store</h1>
-          <nav className="space-x-4">
-            <Link href="/login" data-testid="btn-login">
-              <Button className="bg-transparent text-[#d4af37] border-2 border-[#d4af37] hover:bg-[#d4af37] hover:text-[#2a2622] rounded-none uppercase font-bold tracking-wider">Login</Button>
-            </Link>
-            <Link href="/register" data-testid="btn-register">
-              <Button className="bg-[#2a2622] text-[#d4af37] border-2 border-[#d4af37] hover:bg-[#d4af37] hover:text-[#2a2622] rounded-none uppercase font-bold tracking-wider">Register</Button>
-            </Link>
+          <nav className="space-x-4 flex items-center">
+            {user ? (
+              <>
+                <span data-testid="user-email" className="text-sm font-medium text-gray-700 mr-4">
+                  {user.email}
+                </span>
+                <Button 
+                  onClick={() => signOut()} 
+                  data-testid="btn-logout" 
+                  className="bg-transparent text-[#d4af37] border-2 border-[#d4af37] hover:bg-[#d4af37] hover:text-[#2a2622] rounded-none uppercase font-bold tracking-wider"
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link href="/login" data-testid="btn-login">
+                  <Button className="bg-transparent text-[#d4af37] border-2 border-[#d4af37] hover:bg-[#d4af37] hover:text-[#2a2622] rounded-none uppercase font-bold tracking-wider">Login</Button>
+                </Link>
+                <Link href="/register" data-testid="btn-register">
+                  <Button className="bg-[#2a2622] text-[#d4af37] border-2 border-[#d4af37] hover:bg-[#d4af37] hover:text-[#2a2622] rounded-none uppercase font-bold tracking-wider">Register</Button>
+                </Link>
+              </>
+            )}
           </nav>
         </div>
       </header>

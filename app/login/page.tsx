@@ -6,16 +6,24 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
+
 export default function LoginPage() {
+  const router = useRouter();
+  const { signIn } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [errorAuth, setErrorAuth] = useState("");
   const [success, setSuccess] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSuccess("");
+    setErrorAuth("");
     const newErrors: { email?: string; password?: string } = {};
 
     // Validate Email
@@ -32,9 +40,20 @@ export default function LoginPage() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+      return;
+    }
+    
+    setErrors({});
+    setIsSubmitting(true);
+
+    const { error } = await signIn({ email, password });
+    
+    setIsSubmitting(false);
+
+    if (error) {
+      setErrorAuth(error.message);
     } else {
-      setErrors({});
-      setSuccess("Login successful (demo)");
+      router.push("/");
     }
   };
 
@@ -50,6 +69,11 @@ export default function LoginPage() {
         </CardHeader>
         <CardContent>
           <form data-testid="login-form" onSubmit={handleSubmit} noValidate className="space-y-4">
+            {errorAuth && (
+              <div data-testid="error-auth" className="p-3 bg-red-100 text-red-700 rounded-md text-sm font-medium">
+                {errorAuth}
+              </div>
+            )}
             {success && (
               <div data-testid="form-success" className="p-3 bg-green-100 text-green-700 rounded-md text-sm">
                 {success}

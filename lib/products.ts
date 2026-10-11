@@ -43,19 +43,19 @@ export const products: Product[] = [
   },
   {
     id: 5,
-    name: "Regulus Captain Chibi Plush Doll",
-    description: "Pirate captain Regulus rocking her vintage vinyl records and cool sunglasses in plush format.",
-    price: 34.99,
+    name: "Hungry Hungry Heron Udimo Plushie",
+    description: "Whimsical long-beaked Heron Udimo plush doll, featuring a quirky gaze and ultra-soft downy plumage.",
+    price: 35.99,
     category: "Plushies",
-    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/b704a1e1bf1558fc325c856d3c8b55bd.jpg?v=1789897655"
+    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/f25e9e019ca9b5f898aafbdb27699244.jpg?v=1776248097"
   },
   {
     id: 6,
-    name: "Tooth Fairy Bedtime Story Sleeping Plush",
-    description: "Comfortable and calming sleeping companion inspired by the gentle Tooth Fairy and her soothing nursery rhymes.",
-    price: 38.99,
+    name: "Fate on a Fingertip Character Plush Finger Puppet",
+    description: "Charming mini arcanist puppet tailored to perch gently on your fingertip for impromptu teatime storytelling.",
+    price: 18.99,
     category: "Plushies",
-    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/e6f5c8d85e892e9dc29df13cf027bb69.jpg?v=1786612616"
+    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/c77dc2495aa0e3c4fd508082adea5505.jpg?v=1769066877"
   },
 
   // --- Category: Badges (6 items) ---
@@ -137,25 +137,25 @@ export const products: Product[] = [
     id: 16,
     name: "Finale in Silver Lorentz Butterfly Garment Standee",
     description: "Graceful theatrical acrylic display featuring silver-plated filigree and delicate butterfly wings.",
-    price: 18.99,
+    price: 23.99,
     category: "Standees",
-    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/e2d340ead164f20c9d8f5f0f5d50633d.jpg?v=1789896856"
+    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/3372bcfd0bae9950a30c3cc15de46e03.jpg?v=1789891629"
   },
   {
     id: 17,
+    name: "Image of Time Illustration Acrylic Standees",
+    description: "Large scale acrylic panoramic composition celebrating foundational memory reels from the archives.",
+    price: 32.99,
+    category: "Standees",
+    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/CG_f25c9cdb-a8a2-4190-b200-3491163ba9c8.jpg?v=1786605248"
+  },
+  {
+    id: 18,
     name: "Pre-Storm Protocol Silver Foil Shikishi Board",
     description: "Collector's art shikishi board treated with cold-stamped silver foil capturing the stillness before the Storm.",
     price: 8.99,
     category: "Standees",
     image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/3a9925565eda818355b09845f6cabd3a.jpg?v=1782809269"
-  },
-  {
-    id: 18,
-    name: "Wander My Way Acrylic Shikishi Board",
-    description: "Vibrant and poetic artboard depicting travels across 20th century European streets and rain showers.",
-    price: 14.99,
-    category: "Standees",
-    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/a4a0c4849b49082376d9afdb0dc9ac8c.jpg?v=1776308392"
   },
 
   // --- Category: Accessories (6 items) ---
@@ -185,26 +185,26 @@ export const products: Product[] = [
   },
   {
     id: 22,
-    name: "Golden Fleece Vintage Pocket Watch Keyring",
-    description: "Antique brass pocket watch replica with delicate Roman numerals and ticking pendulum motif.",
+    name: "Returning Nevermore Igor Garment Pack",
+    description: "Complete textile accessory kit with embroidered collar insignias and decorative garment ribbons.",
     price: 16.99,
     category: "Accessories",
-    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/ed37d5406e082cafac5107dcaa29a3ac.jpg?v=1786614979"
+    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/a62dfb69376f003aefc76142664cc5af.jpg?v=1789896600"
   },
   {
     id: 23,
-    name: "Timekeeper's Suitcase Replica Leather Luggage Tag",
-    description: "Genuine embossed brown leather tag inspired by Vertin's miraculous traveling suitcase.",
-    price: 15.99,
+    name: "The Temporal Scale Illustration Postcard Pack",
+    description: "Luxurious linen textured vintage postcards showcasing iconic scenes through rain-slicked glass.",
+    price: 12.99,
     category: "Accessories",
-    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/8bc8f7346f884e9a5b80f7ddbd5ca7c9.jpg?v=1789897320"
+    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/CG_6c55dc4d-12c4-41fa-99f0-6bbf0c0a6d81.jpg?v=1789893479"
   },
   {
     id: 24,
-    name: "Spinning Compass Rotating Metal Keychain",
-    description: "Heavyweight brass rotating compass keychain calibrated to guide lost souls through the eras.",
-    price: 18.99,
+    name: "Character Artifice Series Film Set - Act 4",
+    description: "Translucent vintage film strips encased in antique slide frames commemorating pivotal chapter memories.",
+    price: 14.99,
     category: "Accessories",
-    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/Q_2da06dbc-ad74-4302-abc8-e3f129f8e9ea.jpg?v=1786613509"
+    image: "https://cdn.shopify.com/s/files/1/0893/3877/3822/files/vol_7cea8112-f123-46f2-bd5b-b76614ce84aa.jpg?v=1789897945"
   }
 ];

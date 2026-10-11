@@ -1,9 +1,19 @@
-export const products = [
+export interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  image: string;
+}
+
+export const products: Product[] = [
   {
     id: 1,
     name: "Wireless Headphones",
     description: "High-quality noise-canceling headphones.",
     price: 199.99,
+    category: "Audio",
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop"
   },
   {
@@ -11,6 +21,7 @@ export const products = [
     name: "Mechanical Keyboard",
     description: "RGB mechanical keyboard with tactile switches.",
     price: 129.99,
+    category: "Peripherals",
     image: "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=600&auto=format&fit=crop"
   },
   {
@@ -18,6 +29,7 @@ export const products = [
     name: "Gaming Mouse",
     description: "Ergonomic gaming mouse with adjustable DPI.",
     price: 59.99,
+    category: "Peripherals",
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=600&auto=format&fit=crop"
   },
   {
@@ -25,6 +37,7 @@ export const products = [
     name: "4K Monitor",
     description: "Ultra HD 4K monitor for crisp visuals.",
     price: 349.99,
+    category: "Peripherals",
     image: "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=600&auto=format&fit=crop"
   },
   {
@@ -32,6 +45,7 @@ export const products = [
     name: "Smartwatch",
     description: "Fitness tracker and smartwatch with heart rate monitor.",
     price: 149.99,
+    category: "Accessories",
     image: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=600&auto=format&fit=crop"
   },
   {
@@ -39,6 +53,7 @@ export const products = [
     name: "Bluetooth Speaker",
     description: "Portable Bluetooth speaker with deep bass.",
     price: 79.99,
+    category: "Audio",
     image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=600&auto=format&fit=crop"
   }
 ];

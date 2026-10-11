@@ -6,6 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Header } from "@/components/Header";
 
 export default function AccountPage() {
   const { user, loading } = useAuth();
@@ -33,16 +34,7 @@ export default function AccountPage() {
     <div className="flex min-h-screen flex-col bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center bg-fixed relative">
       <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
 
-      <header className="bg-white/95 border-b-2 border-[#d4af37] shadow-sm sticky top-0 z-10 relative">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
-          <h1 className="text-xl font-bold text-[#bfa87e] uppercase tracking-wider">1999 Store</h1>
-          <nav className="space-x-4">
-            <Link href="/">
-              <Button variant="outline" className="text-[#d4af37] border-[#d4af37]">Home</Button>
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main className="flex-grow flex items-center justify-center relative z-10 p-4">
         <Card data-testid="account-page" className="w-full max-w-md bg-white/95 border-[#d4af37] border-2 shadow-2xl rounded-sm">

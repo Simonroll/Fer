@@ -3,9 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { products } from "@/lib/products";
+import { getReviewsForProduct } from "@/lib/reviews";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
+import { ReviewsProvider } from "@/contexts/ReviewsContext";
+import { ReviewSection } from "@/components/reviews/ReviewSection";
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return products.map((p) => ({
@@ -50,6 +55,9 @@ export default async function ProductDetailPage({
   if (!product) {
     notFound();
   }
+
+  // Fetch initial reviews on the server for SSR
+  const reviewsData = await getReviewsForProduct(numId);
 
   return (
     <div className="min-h-screen flex flex-col bg-[url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center bg-fixed relative">
@@ -136,6 +144,11 @@ export default async function ProductDetailPage({
             </div>
           </div>
         </div>
+
+        {/* Product Reviews Section (wrapped by ReviewsProvider) */}
+        <ReviewsProvider productId={numId} initialReviews={reviewsData}>
+          <ReviewSection productId={numId} />
+        </ReviewsProvider>
       </main>
 
       <footer className="bg-white/95 border-t-2 border-[#d4af37] mt-auto py-6 relative z-10">
